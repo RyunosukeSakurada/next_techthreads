@@ -2,6 +2,12 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from './components/navbar/Navbar'
+import RegisterModal from './components/modals/RegisterModal'
+import ToasterProvider from './providers/ToasterProvider'
+import LoginModal from './components/modals/LoginModal'
+import ClientOnly from './components/ClientOnly'
+import getCurrentUser from './actions/getCurrentUser'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,16 +16,24 @@ export const metadata: Metadata = {
   description: 'TechThreads',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+  const currentUser = await getCurrentUser();
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <div className='p-24'>
+        <ClientOnly>
+          <ToasterProvider />
+          <LoginModal />
+          <RegisterModal />
+          <Navbar  currentUser={currentUser}/>
+        </ClientOnly>
+        <div className='py-40 px-6'>
           {children}
         </div>
       </body>
