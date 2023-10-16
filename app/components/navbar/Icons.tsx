@@ -14,7 +14,7 @@ const SocialIcon: FC<SocialIconProps> = ({ Icon }) => (
 
 const Icons: FC = () => {
   return (
-    <div className='flex flex-row items-center gap-3'>
+    <div className='hidden md:flex flex-row items-center gap-3'>
       <SocialIcon Icon={FaXTwitter} />
       <SocialIcon Icon={FaFacebook} />
       <SocialIcon Icon={FaInstagram} />

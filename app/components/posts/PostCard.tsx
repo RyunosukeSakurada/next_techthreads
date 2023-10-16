@@ -37,12 +37,12 @@ const PostCard: React.FC<PostCardProps> = ({
     return doc.body.textContent || "";
   }
 
-  function truncateTitle(title: string, maxLength: number = 50): string {
+  function truncateTitle(title: string, maxLength: number = 30): string {
     if (title.length <= maxLength) return title;
     return title.slice(0, maxLength) + '...';
   }
 
-  function truncateDescription(description: string, maxLength: number = 40): string {
+  function truncateDescription(description: string, maxLength: number = 70): string {
     if (description.length <= maxLength) return description;
     return description.slice(0, maxLength) + '...';
   }
@@ -62,9 +62,9 @@ const PostCard: React.FC<PostCardProps> = ({
   return (
     <div 
       onClick={() => router.push(`/posts/${data.id}`)} 
-      className="cursor-pointer group border rounded-lg px-4 py-2 h-80"
+      className="cursor-pointer group border rounded-lg px-4 py-2 h-50 md:h-80"
     >
-      <div className="flex flex-col justify-between h-full w-full">
+      <div className="flex flex-col justify-between h-full w-full pb-4">
         <div className="flex flex-col gap-2">
           <div className="flex flex-row items-center justify-between">
             <div className="font-light text-neutral-500">{data.category}</div>
@@ -73,8 +73,8 @@ const PostCard: React.FC<PostCardProps> = ({
               currentUser={currentUser}
             />
           </div>
-          <div className="font-semibold text-xl">{truncateTitle(data.title)}</div>
-          <div className="font-semibold text-zinc-500">{truncateDescription(stripHtml(data.description))}</div>
+          <div className="font-semibold text-[20px]">{truncateTitle(data.title)}</div>
+          <div className="font-semibold text-[14px] text-zinc-500">{truncateDescription(stripHtml(data.description))}</div>
         </div>
 
         {onAction && actionLabel && (

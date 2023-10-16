@@ -28,27 +28,22 @@ const Home = async ({ searchParams }: HomeProps) => {
   return (
     <ClientOnly>
       <Container>
-        <div className="flex flex-row gap-x-3">
-          <div className="w-3/4 p-4">
-            <div className="
-              grid 
-              grid-cols-1 
-              sm:grid-cols-2 
-              md:grid-cols-3 
-              gap-8
-            ">
-              {posts.map((listing: any) => (
-                <PostCard
-                  currentUser={currentUser}
-                  key={listing.id}
-                  data={listing}
-                />
-              ))}
-            </div>
-          </div>
-          <div className="w-1/4 border rounded-lg p-4 mt-4">
-            right
-          </div>
+        <div className="
+          grid 
+          grid-cols-1 
+          sm:grid-cols-2 
+          md:grid-cols-3 
+          lg:grid-cols-4
+          gap-8
+          mt-4
+        ">
+          {posts.map((listing: any) => (
+            <PostCard
+              currentUser={currentUser}
+              key={listing.id}
+              data={listing}
+            />
+          ))}
         </div>
       </Container>
     </ClientOnly>
