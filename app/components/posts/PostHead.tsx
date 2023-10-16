@@ -6,6 +6,7 @@ import { SafeUser } from "@/app/types";
 
 import Heading from "../Heading";
 import BookmarkButton from "../BookmarkButton";
+import Link from "next/link";
 
 interface ListingHeadProps {
   title: string;
@@ -24,6 +25,9 @@ const ListingHead: React.FC<ListingHeadProps> = ({
 
   return ( 
     <>
+      <Link href={"/"}>
+        <div className="cursor-pointer hover:text-neutral-500"><span className="text-[12px]">◀</span> HOME </div>
+      </Link>
       <Heading
         title={title}
       />

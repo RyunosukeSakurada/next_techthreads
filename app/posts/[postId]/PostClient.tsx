@@ -1,11 +1,6 @@
 'use client';
 
-import axios from "axios";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { toast } from "react-hot-toast";
-import { useRouter } from "next/navigation";
-
-import useLoginModal from "@/app/hooks/useLoginModal";
+import { useMemo} from "react";
 import { SafePost, SafeUser } from "@/app/types";
 
 import Container from "@/app/components/Container";
@@ -51,6 +46,7 @@ const ListingClient: React.FC<PostClientProps> = ({
               user={post.user}
               category={category}
               description={post.description}
+              createdAt={new Date(post.createdAt)}
             />
           </div>
         </div>
