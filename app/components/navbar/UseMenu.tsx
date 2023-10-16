@@ -11,6 +11,8 @@ import { SafeUser } from "@/app/types";
 
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
+import LoginModal from "../modals/LoginModal";
+import usePostModal from "@/app/hooks/usePostModal";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null
@@ -23,6 +25,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
 
   const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
+  const postModal = usePostModal();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -30,12 +33,19 @@ const UserMenu: React.FC<UserMenuProps> = ({
     setIsOpen((value) => !value);
   }, []);
 
+  const onPost = useCallback(()=>{
+    if(!currentUser){
+      return loginModal.onOpen()
+    }
+
+    postModal.onOpen();
+  },[currentUser,loginModal,postModal])
 
   return ( 
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
         <div 
-          onClick={()=>{}}
+          onClick={onPost}
           className="
             hidden
             md:block
@@ -95,7 +105,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
               <>
                 <MenuItem 
                   label="My posts" 
-                  onClick={() => router.push('/trips')}
+                  onClick={() => router.push('/myposts')}
                 />
                 <MenuItem 
                   label="My bookmarks" 

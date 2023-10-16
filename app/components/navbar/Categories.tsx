@@ -8,7 +8,7 @@ export const categories = [
   { label: 'AWS' },
   { label: 'Docker' },
   { label: 'Python' },
-  { label: 'React JS' },
+  { label: 'ReactJS' },
   { label: 'TypeScript' },
   { label: 'NodeJS' },
   { label: 'Javascript' },
