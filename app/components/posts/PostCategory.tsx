@@ -12,7 +12,7 @@ const PostCategory: React.FC<PostCategoryProps> = ({
       <div className="flex flex-row items-center gap-4">
         <div className="flex flex-col">
             <div 
-              className="text-lg font-semibold border border-green-500 rounded-full px-4 py-1"
+              className="text-lg font-semibold border border-green-500 text-neutral-500 rounded-full px-4 py-1"
             >
               {label}
             </div>
