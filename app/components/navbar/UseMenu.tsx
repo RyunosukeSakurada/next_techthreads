@@ -11,7 +11,6 @@ import { SafeUser } from "@/app/types";
 
 import MenuItem from "./MenuItem";
 import Avatar from "../Avatar";
-import LoginModal from "../modals/LoginModal";
 import usePostModal from "@/app/hooks/usePostModal";
 
 interface UserMenuProps {

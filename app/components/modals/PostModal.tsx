@@ -133,7 +133,7 @@ const PostModal = () => {
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <Heading
-        title="Which of these best describes your place?"
+        title="What is the category of your post?"
         subtitle="Pick a category"
       />
       <div 
@@ -164,8 +164,8 @@ const PostModal = () => {
     bodyContent = (
       <div className="flex flex-col gap-8">
         <Heading
-          title="Add a photo of your place"
-          subtitle="Show guests what your place looks like!"
+          title="Add a thumbnail of your post"
+          subtitle="It will be displayed on the detail page"
         />
         <ImageUpload
           id="imageSrc"
@@ -182,8 +182,8 @@ const PostModal = () => {
     bodyContent = (
         <div className="flex flex-col gap-2 h-full">
             <Heading
-                title="How would you describe your place?"
-                subtitle="Short and sweet works best!"
+                title="How would you describe your post?"
+                subtitle="Please enter the title and the article."
             />
           <div className="flex flex-col gap-8">
               <Input
