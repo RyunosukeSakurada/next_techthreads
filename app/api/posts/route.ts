@@ -26,7 +26,7 @@ export async function POST(
     }
   });
 
-  const listing = await prisma.post.create({
+  const post = await prisma.post.create({
     data: {
       title,
       description,
@@ -36,5 +36,5 @@ export async function POST(
     }
   });
 
-  return NextResponse.json(listing);
+  return NextResponse.json(post);
 }

@@ -7,11 +7,9 @@ import getPosts, {
 } from "@/app/actions/getPosts";
 import PostCard from "./components/posts/PostCard";
 
-
 interface HomeProps {
   searchParams: IPostsParams
 };
-
 
 const Home = async ({ searchParams }: HomeProps) => {
   const posts = await getPosts(searchParams);
