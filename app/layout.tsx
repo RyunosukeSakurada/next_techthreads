@@ -12,6 +12,8 @@ import PostModal from './components/modals/PostModal'
 
 const inter = Inter({ subsets: ['latin'] })
 
+export const dynamic = "force-dynamic"
+
 export const metadata: Metadata = {
   title: 'TechThreads',
   description: 'TechThreads',
@@ -22,7 +24,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
   const currentUser = await getCurrentUser();
 
   return (

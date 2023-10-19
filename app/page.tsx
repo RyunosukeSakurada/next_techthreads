@@ -1,11 +1,12 @@
-import getCurrentUser from "./actions/getCurrentUser";
-import ClientOnly from "./components/ClientOnly";
+import PostCard from "./components/posts/PostCard";
 import Container from "./components/Container";
 import EmptyState from "./components/EmptyState";
+
 import getPosts, { 
   IPostsParams
 } from "@/app/actions/getPosts";
-import PostCard from "./components/posts/PostCard";
+import getCurrentUser from "./actions/getCurrentUser";
+import ClientOnly from "./components/ClientOnly";
 
 interface HomeProps {
   searchParams: IPostsParams
